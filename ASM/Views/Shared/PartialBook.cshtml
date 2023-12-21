@@ -1,0 +1,15 @@
+﻿@model ASM.Models.Book
+<div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="featured__item">
+        <div class="featured__item__pic set-bg" data-setbg="@Url.Content("~/img/" + Model.CoverImage)" style="background-size: contain;">
+            <ul class="featured__item__pic__hover">
+                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                <li><a asp-controller="CartItems" asp-action="AddToCart" asp-route-id="@Model.BookId"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+        <div class="featured__item__text">
+            <h6><a asp-controller="Home" asp-action="Detail" asp-route-bookId="@Model.BookId" asp-route-genreId="@Model.GenreId">@Model.Title</a></h6>
+            <h5>$@Model.Price</h5>
+        </div>
+    </div>
+</div>

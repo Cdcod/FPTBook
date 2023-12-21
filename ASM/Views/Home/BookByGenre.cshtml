@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "BookByGenre";
+}
+@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<ASM.Models.Book>
+
+@foreach (var item in Model)
+{
+    @await Html.PartialAsync("PartialBook", item)
+}
+@await Html.PartialAsync("PartialPagination", Model)

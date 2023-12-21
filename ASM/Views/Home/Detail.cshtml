@@ -1,0 +1,45 @@
+﻿@model ASM.Models.Book
+@{
+    ViewData["Title"] = "Detail";
+}
+<!-- Product Details Section Begin -->
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <img class="product__details__pic__item--large" src="@Url.Content("~/img/" + Model.CoverImage)" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>@Model.Title</h3>
+                    <div class="product__details__rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <span>(18 reviews)</span>
+                    </div>
+                    <div class="product__details__price">$@Model.Price</div>
+                    <p>
+                        @Model.Description
+                    </p>
+                    <a asp-controller="CartItems" asp-action="AddToCart" asp-route-id="@Model.BookId" class="primary-btn">ADD TO CARD</a>
+                    <ul>
+                        <li><b>Availability</b> <span>@Model.StockQuantity</span></li>
+                        @foreach (var item in ViewBag.genre)
+                        { <li><b>Genre</b> <span>@item.GenreName</span></li> }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product Details Section End -->
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
