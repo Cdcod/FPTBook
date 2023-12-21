@@ -23,4 +23,4 @@ dotnet run
 ```
 Please replace `<your-repository-url>`, `<your-repository-name>`, and `<your-branch-name>` with your actual repository URL, repository name, and branch name respectively. 
 
-Remember, you need to have Git and .NET Core SDK installed on your machine to execute these commands. If you encounter any issues, please refer to the README file in your repository or the official ASP.NET Core documentation.
+Remember, you need to have Git and .NET Core SDK installed on your machine to execute these commands. If you encounter any issues, please refer to the official ASP.NET Core documentation.
