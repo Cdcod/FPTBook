@@ -1,5 +1,5 @@
 **Review:**
-Your bookstore web application, built using ASP.NET Core, is a robust and user-friendly platform that effectively caters to the needs of book enthusiasts. The intuitive user interface, coupled with efficient search functionality, ensures a seamless browsing experience. The categorization of books by genre, author, and popularity is a thoughtful feature that aids in navigation. The secure and swift checkout process enhances the overall user experience. However, there is always room for improvement. Incorporating user reviews and ratings for the books could provide prospective buyers with valuable insights. 
+My bookstore web application, built using ASP.NET Core, is a robust and user-friendly platform that effectively caters to the needs of book enthusiasts. The intuitive user interface, coupled with efficient search functionality, ensures a seamless browsing experience. The categorization of books by genre, author, and popularity is a thoughtful feature that aids in navigation. The secure and swift checkout process enhances the overall user experience. However, there is always room for improvement. Incorporating user reviews and ratings for the books could provide prospective buyers with valuable insights. 
 
 **Instructions to clone and set up the repository:**
 ```bash
