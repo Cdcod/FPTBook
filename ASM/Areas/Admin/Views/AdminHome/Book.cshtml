@@ -1,0 +1,54 @@
+﻿@model List<ASM.Models.Book>
+@{
+    ViewData["Title"] = "Book";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<section>
+    <a asp-controller="AdminHome" asp-action="BookAdd">Add new Book</a>
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Genre</td>
+                <td>ISBN</td>
+                <td>PubYear</td>
+                <td>Price</td>
+                <td>Image</td>
+                <td>Stock</td>
+                <td>Description</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.BookId</td>
+                    <td>@item.Title</td>
+                    <td>@foreach(var genre in ViewBag.Genre)
+                        {
+                            @if(item.GenreId == genre.GenreId)
+                            {
+                                @genre.GenreName
+                            }
+                        }
+                    </td>
+                    <td>@item.Isbn</td>
+                    <td>@item.PublicationYear</td>
+                    <td>$@item.Price</td>
+                    <td><img src="~/img/@item.CoverImage" style="width: 75%; height: 75%" /></td>
+                    <td>@item.StockQuantity</td>
+                    <td><textarea style="width: 250px; height:150px;">@item.Description</textarea></td>
+                    <td>
+                        <a asp-controller="AdminHome" asp-action="BookEdit" asp-route-id="@item.BookId">Edit</a>
+                        <hr />
+                        <a asp-controller="AdminHome" asp-action="BookDelete" asp-route-id="@item.BookId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+

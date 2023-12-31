@@ -36,7 +36,10 @@
                         <div class="header__top__right__auth">
                             @if(name != null)
                             {
-                                <a asp-controller="Access" asp-action="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                <div style="display: flex; justify-content:space-between; width:50px">
+                                    <a asp-controller="Access" asp-action="Account"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                                    <a asp-controller="Access" asp-action="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                </div>
                             }
                             else
                             {

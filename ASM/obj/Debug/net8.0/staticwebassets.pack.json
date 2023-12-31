@@ -561,62 +561,6 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\package.json"
     },
     {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\charts\\chartjs.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\charts\\chartjs.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\forms\\basic_elements.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\forms\\basic_elements.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\icons\\mdi.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\icons\\mdi.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\samples\\blank-page.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\samples\\blank-page.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\samples\\error-404.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\samples\\error-404.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\samples\\error-500.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\samples\\error-500.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\samples\\login.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\samples\\login.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\samples\\register.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\samples\\register.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\tables\\basic-table.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\tables\\basic-table.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\ui-features\\buttons.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\ui-features\\buttons.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\pages\\ui-features\\typography.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\pages\\ui-features\\typography.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\partials\\_footer.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\partials\\_footer.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\partials\\_navbar.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\partials\\_navbar.html"
-    },
-    {
-      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\partials\\_sidebar.html",
-      "PackagePath": "staticwebassets\\LayoutAdmin\\partials\\_sidebar.html"
-    },
-    {
       "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\LayoutAdmin\\screenshot.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\screenshot.jpg"
     },
@@ -1143,6 +1087,14 @@
     {
       "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\img\\a_winter_in_new_york.webp",
       "PackagePath": "staticwebassets\\img\\a_winter_in_new_york.webp"
+    },
+    {
+      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\img\\blood.jpg",
+      "PackagePath": "staticwebassets\\img\\blood.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\img\\dark_stars.jpg",
+      "PackagePath": "staticwebassets\\img\\dark_stars.jpg"
     },
     {
       "Id": "C:\\Users\\PC\\source\\repos\\ASM\\ASM\\wwwroot\\img\\the_river_why.webp",

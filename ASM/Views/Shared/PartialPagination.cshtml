@@ -3,32 +3,75 @@
 @{
     var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
     var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var keys = ViewContext.RouteData.Values["key"];
+    var values = ViewContext.RouteData.Values["value"];
     var pagination = Model.GetMetaData();
 }
 
 <ul class="pagination home-product__pagination">
     @if (pagination.HasPreviousPage)
     {
-        <li class="pagination-item">
-            <a class="pagination-item__link" href="@Url.Action(currentAction, new { controller = currentController, page = pagination.PageNumber - 1 })" aria-label="« Previous">
-                <i class="pagination-item__icon fa-solid fa-angle-down fa-rotate-90"></i>
-            </a>
-        </li>
+        @if (keys != null)
+        {
+            @if (keys.Equals("genreId"))
+            {
+                <li class="pagination-item">
+                    <a class="pagination-item__link" href="@Url.Action(currentAction, new { controller = currentController, page = pagination.PageNumber - 1, genreId = values})" aria-label="« Previous">
+                        <i class="pagination-item__icon fa-solid fa-angle-down fa-rotate-90"></i>
+                    </a>
+                </li>
+            }
+            @if (keys.Equals("keyword"))
+            {
+                <li class="pagination-item">
+                    <a class="pagination-item__link" href="@Url.Action(currentAction, new { controller = currentController, page = pagination.PageNumber - 1, keyword = values})" aria-label="« Previous">
+                        <i class="pagination-item__icon fa-solid fa-angle-down fa-rotate-90"></i>
+                    </a>
+                </li>
+            }
+
+        }
     }
 
     @for (int i = 1; i <= pagination.PageCount; i++)
     {
-        <li class="pagination-item @(i == pagination.PageNumber ? "active" : "")">
-            <a href="@Url.Action(currentAction, new { controller = currentController, page = i })" class="pagination-item__link">@i</a>
-        </li>
+        @if(keys != null)
+        {
+            @if (keys.Equals("genreId"))
+            {
+                <li class="pagination-item @(i == pagination.PageNumber ? "active" : "")">
+                    <a href="@Url.Action(currentAction, new { controller = currentController, page = i, genreId = values })" class="pagination-item__link">@i</a>
+                </li>
+            }
+            @if (keys.Equals("keyword"))
+            {
+                <li class="pagination-item @(i == pagination.PageNumber ? "active" : "")">
+                    <a href="@Url.Action(currentAction, new { controller = currentController, page = i, keyword = values })" class="pagination-item__link">@i</a>
+                </li>
+            }
+        }
     }
 
     @if (pagination.HasNextPage)
     {
-        <li class="pagination-item">
-            <a class="pagination-item__link" href="@Url.Action(currentAction, new { controller = currentController, page = pagination.PageNumber + 1 })" rel="next" aria-label="Next »">
-                <i class="pagination-item__icon fa-solid fa-angle-down fa-rotate-270"></i>
-            </a>
-        </li>
+        @if(keys != null)
+        {
+            @if (keys.Equals("genreId"))
+            {
+                <li class="pagination-item">
+                    <a class="pagination-item__link" href="@Url.Action(currentAction, new { controller = currentController, page = pagination.PageNumber + 1, genreId = values })" rel="next" aria-label="Next »">
+                        <i class="pagination-item__icon fa-solid fa-angle-down fa-rotate-270"></i>
+                    </a>
+                </li>
+            }
+            @if (keys.Equals("keyword"))
+            {
+                <li class="pagination-item">
+                    <a class="pagination-item__link" href="@Url.Action(currentAction, new { controller = currentController, page = pagination.PageNumber + 1, keyword = values })" rel="next" aria-label="Next »">
+                        <i class="pagination-item__icon fa-solid fa-angle-down fa-rotate-270"></i>
+                    </a>
+                </li>
+            }
+        }
     }
 </ul>

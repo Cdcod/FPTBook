@@ -13,7 +13,8 @@
                     Image = book.CoverImage,
                     Title = book.Title,
                     Price = book.Price,
-                    Quantity = quantity
+                    Quantity = quantity,
+                    StockQuantity = book.StockQuantity
                 }); 
             }
         }

@@ -27,7 +27,6 @@ namespace ASM.Controllers
             {
                 return NotFound();
             }
-
             var cart = GetCart();
             cart.AddItem(book, quantity);
 
@@ -46,6 +45,30 @@ namespace ASM.Controllers
             var cart = GetCart();
             return View( cart);
         }
+
+        [HttpPost]
+        public IActionResult UpdateCart(int[] bookIds, int[] quantities)
+        {
+            var cart = GetCart();
+
+            for (int i = 0; i < bookIds.Length; i++)
+            {
+                var bookId = bookIds[i];
+                var quantity = quantities[i];
+
+                var itemToUpdate = cart.Items.FirstOrDefault(item => item.BookId == bookId);
+
+                if (itemToUpdate != null)
+                {
+                    itemToUpdate.Quantity = quantity;
+                }
+            }
+
+            SaveCart(cart);
+
+            return RedirectToAction("ViewCart");
+        }
+
 
         public IActionResult RemoveFromCart(int id)
         {

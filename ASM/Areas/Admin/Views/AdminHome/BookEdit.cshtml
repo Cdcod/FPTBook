@@ -1,0 +1,62 @@
+﻿@model ASM.Models.Book
+@{
+    ViewData["Title"] = "BookEdit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<div class="section__body">
+	<div class="container">
+		<div class="title">Edit Book</div>
+		<div class="content">
+			@using (Html.BeginForm("BookEdit", "AdminHome", FormMethod.Post))
+			{
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="product-details">
+					<input type="hidden" asp-for="BookId" />
+					<div class="input-box">
+						<span class="details bg-gradient">Title</span>
+						<input asp-for="Title" class="form-control" placeholder="@Model.Title"/>
+						<span asp-validation-for="Title" class="text-danger"></span>
+					</div>
+					<div class="input-box">
+						<span class="details bg-gradient">Genre</span>
+						<select asp-for="GenreId" class="form-control" asp-items="ViewBag.Genre"></select>
+					</div>
+					<div class="input-box">
+						<span class="details bg-gradient">ISBN</span>
+						<input asp-for="Isbn" class="form-control" placeholder="@Model.Isbn"/>
+						<span asp-validation-for="Isbn" class="text-danger"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Publication Year</span>
+						<input asp-for="PublicationYear" class="form-control" placeholder="@Model.PublicationYear"/>
+						<span asp-validation-for="PublicationYear" class="text-danger"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Price</span>
+						<input asp-for="Price" class="form-control" placeholder="@Model.Price"/>
+						<span asp-validation-for="Price" class="text-danger"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Image</span>
+						<input asp-for="CoverImage" class="form-control" type="file" />
+						<span asp-validation-for="CoverImage" class="text-danger"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Stock</span>
+						<input asp-for="StockQuantity" class="form-control" placeholder="@Model.StockQuantity"/>
+						<span asp-validation-for="StockQuantity" class="text-danger"></span>
+					</div>
+					<div class="input-box">
+						<span class="details">Description</span>
+						<input asp-for="Description" class="form-control" placeholder="@Model.Description"/>
+						<span asp-validation-for="Description" class="text-danger"></span>
+					</div>
+				</div>
+				<button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" type="submit">Update Book</button>
+				<a asp-area="Admin" asp-controller="AdminHome" asp-action="Book" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">Cancel</a>
+			}
+		</div>
+	</div>
+</div>
+

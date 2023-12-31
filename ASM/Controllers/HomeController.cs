@@ -1,8 +1,10 @@
 using ASM.Models;
 using ASM.Models.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using X.PagedList;
 
 namespace ASM.Controllers
@@ -17,12 +19,20 @@ namespace ASM.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int? page)
+        public IActionResult Index(string keyword, int? page)
         {
             int pageSie = 8;
             int pageNumber = page == null || page == 0 ? 1 : page.Value;
             var listbook = _context.Books.AsNoTracking().OrderBy(X => X.Title);
+            if(!string.IsNullOrEmpty(keyword))
+            {
+                listbook = _context.Books.Where(x => x.Title.Contains(keyword)).AsNoTracking().OrderBy(X => X.Title);
+            }
             PagedList<Book> lst = new PagedList<Book>(listbook, pageNumber, pageSie);
+            RouteData.Values.Remove("value");
+            RouteData.Values.Add("value", keyword);
+            RouteData.Values.Remove("key");
+            RouteData.Values.Add("key", "keyword");
             ViewBag.Email = HttpContext.Session.GetString("Email");
             return View(lst);
         }
@@ -34,6 +44,10 @@ namespace ASM.Controllers
             var listbook = _context.Books.AsNoTracking().Where(x => x.GenreId == genreId).OrderBy(X => X.Title);
             PagedList<Book> lst = new PagedList<Book>(listbook, pageNumber, pageSie);
             ViewBag.GenreId = genreId;
+            RouteData.Values.Remove("value");
+            RouteData.Values.Add("value", genreId);
+            RouteData.Values.Remove("key");
+            RouteData.Values.Add("key", "genreId");
             return View(lst);
         }
 
@@ -45,6 +59,15 @@ namespace ASM.Controllers
             return View(book);
         }
 
+        public IActionResult Search(string keyword, int? page)
+        {
+            int pageSie = 8;
+            int pageNumber = page == null || page == 0 ? 1 : page.Value;
+            var listbook = _context.Books.AsNoTracking().Where(x => x.Title.Contains(keyword)).OrderBy(X => X.Title);
+            PagedList<Book> lst = new PagedList<Book>(listbook, pageNumber, pageSie);
+            ViewBag.Keyword = keyword;
+            return View(lst);
+        }   
         public IActionResult Privacy()
         {
             return View();
